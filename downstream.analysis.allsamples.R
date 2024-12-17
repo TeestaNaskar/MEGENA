@@ -62,7 +62,7 @@ deg$Reg = ifelse (deg$log2FoldChange >0 , "UP", "DN")
 deg_mod=GOtest(x=sigmod,deg[,c("Genes","Reg")],query.population = sigmod$values,background = "query",method="hypergeometric")
 write.table(deg_mod,paste(saveto,"MEGENA_mod_overlap_DEGs.xlsx",sep=""),sep="\t",quote=F,row.names=F)
  msigdb.gsea -> msigdb.genesets -> match.arg
-go=msigdb.gsea(sigmod,background = "annotation",method="hypergeometric",species = "rat")
+go=msigdb.gsea(sigmod,background = "annotation",method="hypergeometric",species = "mouse")
 write.table(go[go$P.adj<0.05,],paste(saveto,"MEGENA_mod_GO.xlsx",sep=""),sep="\t",quote=F,row.names=F)
 
 #tf=msigdb.gsea(sigmod,genesets = "c3.tft",background = "annotation",method = "hypergeometric",species = "rat")
